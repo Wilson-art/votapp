@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layaout">
+
+<head>
+	<title>votaApp v.4.0</title>
+	<meta charset="utf=8">
+	<link rel="stylesheet" type="text/css" th:href="@{../css/estilo.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.css}">
+</head>
+
+<body>
+<div id="formula">
+<h1 id="p">Registrate para <span class="badge bg-secondary">VOTAR</span></h1>
+<br>
+	<form action="" th:action="@{/saveVotante}" method="post" th:object="${votante}">
+  <div class="mb-3">
+    <label for="txtIdentificacion" class="form-label">Identificación</label>
+    <input type="number" class="form-control" name="identificacion" id="identificacion" aria-describedby="identificacionHelp" required>
+    <div id="identificacionHelp" class="form-text">Digite el numero de identificación</div>
+  </div>
+  <div class="mb-3">
+    <label for="txtNombres" class="form-label">Nombres</label>
+    <input type="text" class="form-control" name="nombres" id="nombres" aria-describedby="nombresHelp" required>
+    <div id="nombresHelp" class="form-text">Digite los primeros nombres</div>
+  
+  </div>
+  <div class="mb-3">
+    <label for="txtApellidos" class="form-label">Apellidos</label>
+    <input type="text" class="form-control" name="apellidos" id="apellidos" aria-describedby="apellidosHelp" required>
+    <div id="apellidosHelp" class="form-text">Digite los primeros apellidos</div>
+  
+  </div>
+  <div class="mb-3">
+    <label for="txtFechaNac" class="form-label">Fecha de Nacimiento</label>
+    <input type="date" class="form-control" name="fechaNac" id="fechaNac" aria-describedby="fechaNacHelp" required>
+    <div id="fechaNacHelp" class="form-text">Digite la fecha de nacimiento</div>
+  
+  </div>
+  <div class="mb-3">
+    <label for="txtFechaExpCed" class="form-label">Fecha Expedicion de la Cedula</label>
+    <input type="date" class="form-control" name="fechaExpCed" id="fechaExpCed" aria-describedby="fechaExpHelp" required>
+    <div id="fechaExpHelp" class="form-text">Digite la fecha de la expedicion de la cedula</div>
+  
+  </div>
+  
+  <div class="mb-3">
+    <label for="txtLugarNac" class="form-label">Lugar de Nacimiento</label>
+    <input type="number" class="form-control" name="lugarNac" id="lugarNac" aria-describedby="lugarNacHelp" required>
+    <div id="lugarNacHelp" class="form-text">Digite el numero del lugar de nacimiento</div>
+  
+  </div>
+  
+  <div class="mb-3">
+    <label for="txtLugarRes" class="form-label">Lugar de Residencia</label>
+    <input type="number" class="form-control" name="lugarRes" id="lugarRes" aria-describedby="lugarResHelp" required>
+    <div id="lugarResHelp" class="form-text">Digite el numero del lugar de residencia</div>
+  
+  </div>
+  
+ 
+  
+  <div class="mb-3">
+    <label for="txtCorreo" class="form-label">Correo</label>
+    <input type="text" class="form-control" name="correo" id="correo" aria-describedby="correoHelp" required>
+    <div id="correoHelp" class="form-text">Digite el correo electronico</div>
+  
+  </div>
+  
+  <div class="mb-3">
+    <label for="txtSexo" class="form-label">Sexo</label>
+    <input type="number" class="form-control" name="sexo" id="sexo" aria-describedby="sexoHelp" required>
+    <div id="sexoHelp" class="form-text">Digite el numero de su sexo (1 : Macho - 2 : Hembra - 3 : Otro)</div>
+  
+  </div>
+  
+  <br>
+  <button type="submit" class="btn btn-secondary btn-lg" onclick="javascript:voto(0);">Registrar</button>
+</form>
+</div>
+</body>
+
+</html>

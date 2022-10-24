@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layaout">
+
+<head>
+	<title>votaApp v.4.0</title>
+	<meta charset="utf-8">
+	<!-- CSS only -->
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
+	<script type="text/javascript" th:src="@{/js/myScript.js}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+</head>
+
+<body id="cuerpo">
+	<center><img src="img/encabezado.jpeg" width="1297" height="394"></center>
+	<br>
+	<hr>
+
+	<center id="titulo">
+		<h1>VOTACIONES A LA PRECIDENCIA <span class="badge bg-secondary">2022</span></h1>
+	</center>
+
+
+	<p>
+		La primera vuelta de la elección presidencial de Colombia de 2022 se celebrara el 29 de mayo de 2022, y en ella
+		se escogeran a los candidatos para la segunda vuelta a los cargos de presidente y vicepresidente del país para
+		el periodo 2022-2026,
+		y resultará ganador quien haya obtenido la mitad más uno de los votos. En caso de que ninguno de los aspirantes
+		obtenga esta ponderación de los votos, los dos candidatos que en primera vuelta hayan obtenido la mayoría de los
+		votos irán a la segunda vuelta; el ganador será quien logre la mayoría de los votos.La decición esta en las
+		manos del Pueblo.
+
+	</p>
+
+	<p>RECORDAR...</p>
+	<p>
+		Los organismos encargados de velar administrativamente por el evento son la Registraduría Nacional del Estado
+		Civil y el Consejo Nacional Electoral.
+		Podran ejercer su derecho a sufragio los ciudadanos mayores de 18 años de edad que no hagan parte de la Fuerza
+		Pública, no estén en un proceso de interdicción, y que no hayan sido condenados. Las personas que se encuentran
+		en centros de reclusión
+		, tales como cárceles o reformatorios, podrán votar en los establecimientos que determine la Registraduría
+		Nacional. La inscripción en el registro civil no es automática, el ciudadano debe dirigirse a la sede regional
+		de la Registraduría para inscribir
+		su identificación personal en un puesto de votación.​
+
+	</p>
+
+
+	<br>
+	<hr>
+	<h2 id="titulo">CANDIDATOS A LA PRECIDENCIA <span class="badge bg-secondary">2022</span></h2>
+	<br>
+	<!-- 2. Tabla de candidatos (Adecuarlo el estilo a su gusto y el contenido que considere)-->
+
+	<div>
+		<form name="VOT">
+			<table align="center" border="2" class="table table-striped">
+				<thead>
+					<tr>
+						<th id="celdaPer" class="table table-dark">Gustavo Francisco Petro Urrego</th>
+						<th id="celdaPer" class="table table-dark">Rodolfo Hernández Suárez</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td width="50">
+							<img src="img/foto1.webp" class="rounded float-start"><br>
+							<center>
+								<p id="p2">(Ciénaga de Oro, Córdoba,a​ 19 de abril de 1960)</p>
+							</center>
+							<p id="p">Político y economista colombiano.Uno de fundadores de la coalición "Pacto
+								Histórico".
+								Coalición política colombiana compuesta por diversos partidos y movimiento sociales
+								lanzada el 11 de febrero de 2021 por el candidato.</p>
+							<br>
+							<center><a th:href='@{/registro}'><button type="button" class="btn btn-secondary btn-lg"
+									onclick="javascript:voto(0);">▸Votar Aqui◃</button></a></center>
+							<center><a th:href="@{/btnPacto}"><img src="img/btnPacto.png" width="130" height="70"></a></center>
+						</td>
+						<td width="50">
+							<img src="img/foto2.webp" class="rounded float-start"><br>
+							<center id="p2">
+								<p>(Piedecuesta, 26 de marzo de 1945)</p>
+							</center>
+
+							<p id="p"> Ingeniero civil, empresario y político colombiano. Líder del partido político
+								"LIGA" desde 2019. Fue Alcalde de Bucaramanga entre 2016 y 2019,
+								cargo del cual renunció al ser suspendido previamente por propaganda política.</p>
+							<br>
+							<center><a th:href='@{/registro}'><button type="button" class="btn btn-secondary btn-lg"
+									onclick="javascript:voto(1);">▸Votar Aqui◃</button></a></center>
+							<center><a th:href="@{/btnLiga}"><img src="img/btnLiga.png" width="130" height="70"></a></center>
+						</td>
+
+					</tr>
+				</tbody>
+
+				<thead2>
+					<tr>
+						<th id="celdaPer" class="table table-dark">Federico Andrés Gutiérrez Zuluaga</th>
+						<th id="celdaPer" class="table table-dark">Sergio Fajardo Valderrama</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+
+							<td width="50">
+								<img src="img/foto3.webp" class="rounded float-start"><br>
+								<center>
+									<p id="p2">(Medellín, 28 de noviembre de 1974)</p>
+								</center>
+
+								<p id="p"> Ingeniero civil, consultor de seguridad y político colombiano, líder de la
+									coalición política
+									"Equipo por Colombia". Fue consultor en seguridad urbana en varios países de América
+									del Sur, ejerció
+									como concejal de Medellín, entre 2004 y 2012, y como alcalde de esa ciudad, entre
+									2016 y 2020.</p>
+								<br>
+								<center><a th:href='@{/registro}'><button type="button" class="btn btn-secondary btn-lg"
+										onclick="javascript:voto(2);">▸Votar Aqui◃</button></a></center>
+								<center><a th:href="@{/btnEquipo}"><img src="img/btnEquipo.png" width="130" height="70"></a></center>
+
+							</td>
+							<td width="50">
+								<img src="img/foto4.webp" class="rounded float-start"><br>
+								<center>
+									<p id="p2">(Medellín, 19 de junio de 1956)</p>
+								</center>
+
+								<p id="p">Docente y político colombiano. Fundador y lider de la Coalición de la
+									Esperanza, basada en cuatro lineamientos programáticos bajo los cuales
+									trabajan: recuperar la confianza en la democracia, poner la economía al servicio de
+									la ciudadanía, cuidar la biodiversidad
+									y proteger la ciudadanía y los territorios. </p>
+								<br>
+								<center><a th:href='@{/registro}'><button type="button" class="btn btn-secondary btn-lg"
+										onclick="javascript:voto(3);">▸Votar Aqui◃</button></a></center>
+								<center><a th:href="@{/btnCentro}"><img src="img/btnCentro.png" width="130" height="70"></a></center>
+
+							</td>
+
+						</tr>
+					</tbody>
+			</table>
+			<br>
+			<div class="d-grid gap-2 col-6 mx-auto">
+				<button class="btn btn-outline-secondary" type="button" onclick="javascript:estadistica();">▸Ver los
+					Votos 🗳◃</button>
+
+			</div>
+			<br>
+
+
+
+	</div>
+
+
+	<hr>
+	<div id="verEst"></div>
+	<canvas id="grafica"></canvas>
+
+	<hr>
+	<h2 id="titulo">ULTIMAS <span class="badge bg-secondary">NOTICIAS </span></h2>
+
+	<br>
+	<div class="card mb-3" style="max-width: 540px;">
+		<div class="row g-0">
+			<div class="col-md-4">
+				<img src="img/logoTiempo.jpg" class="img-fluid rounded-start" alt="...">
+			</div>
+			<div class="col-md-8">
+				<div class="card-body">
+					<h5 class="card-title"><a>Encuentro Petro y Uribe[El Tiempo]</a></h5>
+					<p class="card-text">El presidente electo y el expresidente acordaron un canal de comunicación
+						permanente.</p>
+					<p class="card-text"><small class="text-muted">Actualizado en las ultimas 2 Semanas</small></p>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<center><a
+			href="https://www.eltiempo.com/politica/partidos-politicos/reunion-gustavo-petro-y-alvaro-uribe-de-que-se-hablo-en-el-encuentro-705580"
+			class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">▸Link Noticia◃</a></center>
+
+
+
+
+</body>
+
+</body>
+
+</html>
